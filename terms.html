@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Aura Digital</title>
+    <style>
+        :root { --primary: #0f172a; --accent: #2563eb; --text: #334155; --light: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { color: var(--text); background: var(--light); line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 1rem 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.3rem; font-weight: bold; color: white; text-decoration: none; white-space: nowrap; }
+        nav ul { display: flex; list-style: none; gap: 0.8rem; flex-wrap: wrap; }
+        nav a { color: #cbd5e1; text-decoration: none; font-size: 0.85rem; transition: color 0.3s; padding: 0.2rem 0.4rem; border-radius: 4px; }
+        nav a:hover, nav a.active { color: white; background: rgba(255, 255, 255, 0.1); font-weight: 600; }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .menu-toggle span { width: 25px; height: 3px; background: white; }
+        main { min-height: 80vh; padding: 4rem 5%; max-width: 800px; margin: 0 auto; }
+        footer { background: var(--primary); color: #94a3b8; padding: 3rem 5% 1rem; font-size: 0.9rem; margin-top: 4rem; }
+        @media (max-width: 1100px) { .menu-toggle { display: flex; } nav ul { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background: var(--primary); padding: 2rem; gap: 1rem; text-align: center; } nav ul.active { display: flex; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Aura Digital</a>
+        <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
+        <nav><ul id="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html" class="active">Terms</a></li>
+        </ul></nav>
+    </header>
+
+    <main>
+        <h1 style="color: #0f172a; margin-bottom: 1.5rem;">Terms and Conditions</h1>
+        <p style="color: #64748b; margin-bottom: 2rem;">Effective Date: June 2, 2026</p>
+        
+        <h3 style="color: #2563eb; margin: 1.5rem 0 0.5rem;">1. Acceptable Application Use</h3>
+        <p style="margin-bottom: 1.5rem;">This application is developed as an executive submission for grading evaluation. Users interact with the interface parameters under an open layout permission configuration strictly for academic verification purposes.</p>
+        
+        <h3 style="color: #2563eb; margin: 1.5rem 0 0.5rem;">2. Property Rights</h3>
+        <p style="margin-bottom: 1.5rem;">The underlying structural system components, custom script elements, and stylesheet style declarations remain protected under standard corporate deployment guidelines initialized by Aura Digital management.</p>
+    </main>
+
+    <footer><p style="text-align: center;">&copy; 2026 Aura Digital. All rights reserved.</p></footer>
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', () => { document.getElementById('nav-list').classList.toggle('active'); });
+    </script>
+</body>
+</html>

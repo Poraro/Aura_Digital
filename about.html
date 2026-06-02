@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aura Digital</title>
+    <style>
+        :root { --primary: #0f172a; --accent: #2563eb; --text: #334155; --light: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { color: var(--text); background: var(--light); line-height: 1.6; }
+        
+        /* Compact Header layout */
+        header { background: var(--primary); color: white; padding: 1rem 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.3rem; font-weight: bold; color: white; text-decoration: none; white-space: nowrap; }
+        nav ul { display: flex; list-style: none; gap: 0.8rem; flex-wrap: wrap; }
+        nav a { color: #cbd5e1; text-decoration: none; font-size: 0.85rem; transition: color 0.3s; padding: 0.2rem 0.4rem; border-radius: 4px; }
+        nav a:hover, nav a.active { color: white; background: rgba(255, 255, 255, 0.1); font-weight: 600; }
+        
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .menu-toggle span { width: 25px; height: 3px; background: white; }
+        main { min-height: 80vh; padding: 4rem 5%; max-width: 800px; margin: 0 auto; }
+        footer { background: var(--primary); color: #94a3b8; padding: 3rem 5% 1rem; font-size: 0.9rem; margin-top: 4rem; }
+        @media (max-width: 1100px) { .menu-toggle { display: flex; } nav ul { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background: var(--primary); padding: 2rem; gap: 1rem; text-align: center; } nav ul.active { display: flex; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Aura Digital</a>
+        <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
+        <nav><ul id="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+        </ul></nav>
+    </header>
+
+    <main>
+        <h1 style="font-size: 2.5rem; color: #0f172a; margin-bottom: 1.5rem; text-align: center;">About Aura Digital</h1>
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Founded with a vision to eliminate technical friction for corporate institutions, Aura Digital bridges the gap between complex engineering architectures and seamless user experiences.</p>
+        
+        <h2 style="color: #2563eb; margin: 2rem 0 1rem;">Our Mission</h2>
+        <p style="margin-bottom: 1.5rem;">To equip growing enterprises with modern web deployments, robust cloud security infrastructure, and intuitive data analytics tools required to dominate the digital marketplace.</p>
+        
+        <h2 style="color: #2563eb; margin: 2rem 0 1rem;">Our Core Values</h2>
+        <ul style="padding-left: 1.5rem; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Uncompromising Excellence:</strong> Pushing clean, bug-free, optimized source code.</li>
+            <li><strong>Security First:</strong> Securing corporate data protocols at every application layer.</li>
+            <li><strong>Client Empowerment:</strong> Designing transparent software environments that teams can effortlessly control.</li>
+        </ul>
+    </main>
+
+    <footer><p style="text-align: center;">&copy; 2026 Aura Digital. All rights reserved.</p></footer>
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', () => { document.getElementById('nav-list').classList.toggle('active'); });
+    </script>
+</body>
+</html>
