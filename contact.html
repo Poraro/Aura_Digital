@@ -5,19 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Aura Digital</title>
     <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --text: #334155; --light: #f8fafc; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { color: var(--text); background: var(--light); line-height: 1.6; }
-        header { background: var(--primary); color: white; padding: 1rem 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.3rem; font-weight: bold; color: white; text-decoration: none; white-space: nowrap; }
-        nav ul { display: flex; list-style: none; gap: 0.8rem; flex-wrap: wrap; }
-        nav a { color: #cbd5e1; text-decoration: none; font-size: 0.85rem; transition: color 0.3s; padding: 0.2rem 0.4rem; border-radius: 4px; }
-        nav a:hover, nav a.active { color: white; background: rgba(255, 255, 255, 0.1); font-weight: 600; }
-        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .menu-toggle span { width: 25px; height: 3px; background: white; }
-        main { min-height: 80vh; padding: 4rem 5%; }
-        footer { background: var(--primary); color: #94a3b8; padding: 3rem 5% 1rem; font-size: 0.9rem; margin-top: 4rem; }
-        @media (max-width: 1100px) { .menu-toggle { display: flex; } nav ul { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background: var(--primary); padding: 2rem; gap: 1rem; text-align: center; } nav ul.active { display: flex; } }
+        :root { --primary: #0f172a; --accent: #2563eb; --accent-hover: #1d4ed8; --text-main: #1e293b; --text-muted: #64748b; --light-bg: #f8fafc; --card-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.06); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { color: var(--text-main); background: var(--light-bg); line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: white; text-decoration: none; white-space: nowrap; }
+        nav ul { display: flex; list-style: none; gap: 0.5rem; flex-wrap: wrap; }
+        nav a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; padding: 0.5rem 0.8rem; border-radius: 6px; transition: all 0.3s; }
+        nav a:hover, nav a.active { color: white; background: rgba(255, 255, 255, 0.08); font-weight: 600; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { width: 24px; height: 2px; background: white; }
+        
+        main { min-height: 80vh; padding: 5rem 5%; max-width: 650px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        .section-desc { text-align: center; color: var(--text-muted); font-size: 1.1rem; margin-bottom: 4rem; }
+        form { background: white; padding: 3.5rem 3rem; border-radius: 16px; box-shadow: var(--card-shadow); border: 1px solid rgba(15, 23, 42, 0.02); display: flex; flex-direction: column; gap: 1.75rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+        input, textarea { width: 100%; padding: 0.85rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.95rem; color: var(--text-main); transition: border-color 0.2s; background: #f8fafc; }
+        input:focus, textarea:focus { outline: none; border-color: var(--accent); background: white; }
+        .btn-submit { background: var(--accent); color: white; font-weight: 600; padding: 1rem; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s; font-size: 1rem; margin-top: 0.5rem; box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
+        .btn-submit:hover { background: var(--accent-hover); }
+        
+        footer { background: var(--primary); color: #94a3b8; padding: 3rem 5% 1rem; font-size: 0.9rem; margin-top: 6rem; text-align: center; }
+
+        @media (max-width: 1100px) {
+            .menu-toggle { display: flex; }
+            nav ul { display: none; grid-template-columns: repeat(2, 1fr); width: 100%; position: absolute; top: 100%; left: 0; background: var(--primary); padding: 1.5rem; gap: 0.8rem; text-align: center; }
+            nav ul.active { display: grid; }
+            nav a { display: block; padding: 0.6rem; background: rgba(255,255,255,0.03); }
+            .section-title { font-size: 2rem; }
+            form { padding: 2.5rem 1.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -40,28 +58,28 @@
         </ul></nav>
     </header>
 
-    <main style="max-width: 600px; margin: 0 auto;">
-        <h1 style="text-align: center; font-size: 2.5rem; color: #0f172a; margin-bottom: 1rem;">Connect With Us</h1>
-        <p style="text-align: center; color: #64748b; margin-bottom: 3rem;">Have an enterprise project in mind? Drop us a message below.</p>
+    <main>
+        <h1 class="section-title">Connect With Us</h1>
+        <p class="section-desc">Have an enterprise project in mind? Drop us a message below.</p>
         
-        <form onsubmit="event.preventDefault(); alert('Message successfully transmitted to Aura Digital corporate servers!');" style="background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 1.5rem;">
+        <form onsubmit="event.preventDefault(); alert('Message successfully transmitted to Aura Digital corporate servers!');">
             <div>
-                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Full Name</label>
-                <input type="text" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+                <label>Full Name</label>
+                <input type="text" required placeholder="John Doe">
             </div>
             <div>
-                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Corporate Email</label>
-                <input type="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+                <label>Corporate Email</label>
+                <input type="email" required placeholder="john@company.com">
             </div>
             <div>
-                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Message Content</label>
-                <textarea required rows="5" style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit;"></textarea>
+                <label>Message Content</label>
+                <textarea required rows="5" placeholder="Tell us briefly about your engineering requirements..."></textarea>
             </div>
-            <button type="submit" style="background: #2563eb; color: white; font-weight: bold; padding: 0.9rem; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;">Submit Request</button>
+            <button type="submit" class="btn-submit">Submit Request</button>
         </form>
     </main>
 
-    <footer><p style="text-align: center;">&copy; 2026 Aura Digital. All rights reserved.</p></footer>
+    <footer><p>&copy; 2026 Aura Digital. All rights reserved.</p></footer>
     <script>
         document.getElementById('mobile-menu').addEventListener('click', () => { document.getElementById('nav-list').classList.toggle('active'); });
     </script>

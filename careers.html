@@ -5,19 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - Aura Digital</title>
     <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --text: #334155; --light: #f8fafc; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { color: var(--text); background: var(--light); line-height: 1.6; }
-        header { background: var(--primary); color: white; padding: 1rem 3%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.3rem; font-weight: bold; color: white; text-decoration: none; white-space: nowrap; }
-        nav ul { display: flex; list-style: none; gap: 0.8rem; flex-wrap: wrap; }
-        nav a { color: #cbd5e1; text-decoration: none; font-size: 0.85rem; transition: color 0.3s; padding: 0.2rem 0.4rem; border-radius: 4px; }
-        nav a:hover, nav a.active { color: white; background: rgba(255, 255, 255, 0.1); font-weight: 600; }
-        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .menu-toggle span { width: 25px; height: 3px; background: white; }
-        main { min-height: 80vh; padding: 4rem 5%; }
-        footer { background: var(--primary); color: #94a3b8; padding: 3rem 5% 1rem; font-size: 0.9rem; margin-top: 4rem; }
-        @media (max-width: 1100px) { .menu-toggle { display: flex; } nav ul { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background: var(--primary); padding: 2rem; gap: 1rem; text-align: center; } nav ul.active { display: flex; } }
+        :root { --primary: #0f172a; --accent: #2563eb; --accent-hover: #1d4ed8; --text-main: #1e293b; --text-muted: #64748b; --light-bg: #f8fafc; --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.03); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { color: var(--text-main); background: var(--light-bg); line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: white; text-decoration: none; white-space: nowrap; }
+        nav ul { display: flex; list-style: none; gap: 0.5rem; flex-wrap: wrap; }
+        nav a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; padding: 0.5rem 0.8rem; border-radius: 6px; transition: all 0.3s; }
+        nav a:hover, nav a.active { color: white; background: rgba(255, 255, 255, 0.08); font-weight: 600; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { width: 24px; height: 2px; background: white; }
+        
+        main { min-height: 80vh; padding: 5rem 5%; max-width: 850px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        .section-desc { text-align: center; color: var(--text-muted); font-size: 1.15rem; margin-bottom: 5rem; }
+        .roles-heading { color: var(--primary); font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; }
+        .roles-list { display: flex; flex-direction: column; gap: 2rem; }
+        .role-card { background: white; padding: 2.5rem 3rem; border-radius: 16px; box-shadow: var(--card-shadow); border: 1px solid rgba(15, 23, 42, 0.02); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+        .role-details h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.4rem; font-weight: 700; }
+        .role-details p { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+        .btn-apply { background: var(--accent); color: white; border: none; padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; }
+        .btn-apply:hover { background: var(--accent-hover); }
+        
+        footer { background: var(--primary); color: #94a3b8; padding: 3rem 5% 1rem; font-size: 0.9rem; margin-top: 6rem; text-align: center; }
+
+        @media (max-width: 1100px) {
+            .menu-toggle { display: flex; }
+            nav ul { display: none; grid-template-columns: repeat(2, 1fr); width: 100%; position: absolute; top: 100%; left: 0; background: var(--primary); padding: 1.5rem; gap: 0.8rem; text-align: center; }
+            nav ul.active { display: grid; }
+            nav a { display: block; padding: 0.6rem; background: rgba(255,255,255,0.03); }
+            .section-title { font-size: 2rem; }
+            .role-card { padding: 2rem 1.5rem; text-align: center; justify-content: center; }
+            .role-details { width: 100%; }
+            .btn-apply { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -40,31 +61,31 @@
         </ul></nav>
     </header>
 
-    <main style="max-width: 800px; margin: 0 auto;">
-        <h1 style="text-align: center; font-size: 2.5rem; color: #0f172a; margin-bottom: 1rem;">Join Aura Digital</h1>
-        <p style="text-align: center; color: #64748b; margin-bottom: 4rem;">Build the future of digital architecture with a fast-paced global team.</p>
+    <main>
+        <h1 class="section-title">Join Aura Digital</h1>
+        <p class="section-desc">Build the future of digital architecture with a fast-paced global team.</p>
         
-        <h2 style="color: #0f172a; margin-bottom: 1.5rem;">Open Remote Roles</h2>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <h3 style="color: #0f172a; margin-bottom: 0.25rem;">Junior Frontend Web Developer</h3>
-                    <p style="color: #64748b; font-size: 0.9rem;">Engineering Department &bull; Full-Time Remote</p>
+        <h2 class="roles-heading">Open Remote Roles</h2>
+        <div class="roles-list">
+            <div class="role-card">
+                <div class="role-details">
+                    <h3>Junior Frontend Web Developer</h3>
+                    <p>Engineering Department &bull; Full-Time Remote</p>
                 </div>
-                <button onclick="alert('Application engine initiated!')" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: bold; cursor: pointer;">Apply Now</button>
+                <button onclick="alert('Application engine initiated!')" class="btn-apply">Apply Now</button>
             </div>
 
-            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <h3 style="color: #0f172a; margin-bottom: 0.25rem;">AI Data Trainer / Operator</h3>
-                    <p style="color: #64748b; font-size: 0.9rem;">Operations Division &bull; Contract Remote</p>
+            <div class="role-card">
+                <div class="role-details">
+                    <h3>AI Data Trainer / Operator</h3>
+                    <p>Operations Division &bull; Contract Remote</p>
                 </div>
-                <button onclick="alert('Application engine initiated!')" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: bold; cursor: pointer;">Apply Now</button>
+                <button onclick="alert('Application engine initiated!')" class="btn-apply" style="background: #475569;">Apply Now</button>
             </div>
         </div>
     </main>
 
-    <footer><p style="text-align: center;">&copy; 2026 Aura Digital. All rights reserved.</p></footer>
+    <footer><p>&copy; 2026 Aura Digital. All rights reserved.</p></footer>
     <script>
         document.getElementById('mobile-menu').addEventListener('click', () => { document.getElementById('nav-list').classList.toggle('active'); });
     </script>
